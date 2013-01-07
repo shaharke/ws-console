@@ -1,0 +1,24 @@
+{
+    "name" : "ws-console.js",
+    "preferGlobal" : "true",
+    "version" : "0.0.1",
+    "author" : "Shahar Kedar <shahar@gmail.com>",
+    "description" : "Interactive WebSockets Console",
+    "repository" : {
+        "type" : "git",
+        "url" : "https://github.com/shaharke/ws-console.js.git"
+    },
+    "dependencies" : {
+        "socket.io" : "*"
+    },
+    "devDependencies" : {
+        "mocha" : "*",
+        "should" : "*"
+    },
+    "keywords" : ["cli", "websockets", "console"],
+    "license" : "MIT",
+    "engines" : {
+        "node" : ">=0.8.15"
+    }
+
+}
