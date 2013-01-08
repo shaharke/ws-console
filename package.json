@@ -13,7 +13,8 @@
     },
     "devDependencies" : {
         "mocha" : "*",
-        "should" : "*"
+        "should" : "*",
+        "vows" : "*"
     },
     "keywords" : ["cli", "websockets", "console"],
     "license" : "MIT",

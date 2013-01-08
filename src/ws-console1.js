@@ -1,4 +1,5 @@
 var readline = require('readline');
+var parser = require("./parser");
 
 var rl = readline.createInterface({
     input: process.stdin,
@@ -6,27 +7,13 @@ var rl = readline.createInterface({
 });
 
 rl.setPrompt("> ");
-rl.prompt();
+
 
 rl.on('line', function (cmd) {
-    if (cmd) {
-        cmd = cmd.trim();
-        var tokens = cmd.split(" ");
-        var command = tokens[0];
-
-        if (command.indexOf('connect') == 0) {
-            if (tokens.length > 1) {
-                var address = tokens[1];
-                console.log('Connecting to ' + address);
-            } else {
-                console.error("Missing address!");
-                rl.prompt();
-            }
-        } else {
-            console.error("Invalid command: " + command);
-            rl.prompt();
-        }
-    }
-
-
+    var command = parser.parseCommand(cmd);
+    var args = parser.parseArgs(cmd);
+    console.log("Executing: " + command + " " + args.join(" "));
+    rl.prompt();
 });
+
+rl.prompt();
